@@ -6,8 +6,16 @@ public class Runner {
 	}	
 	
 	public static int max(int[][] nums){
-		int toReturn;
-		return 0;
+		int toReturn = 0;;
+		for(int x =0; x < nums.length; x++){
+			for(int y =0; y < nums[x].length; y++){
+				if(toReturn < nums[x][y]){
+					toReturn = nums[x][y];
+				}
+				
+			}
+		}
+		return toReturn;
 		
 	}
 	
