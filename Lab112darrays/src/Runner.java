@@ -5,7 +5,7 @@ public class Runner {
 	}	
 	
 	public static int max(int[][] nums){
-		int toReturn = 0;;
+		int toReturn = 0;
 		for(int x =0; x < nums.length; x++){
 			for(int y =0; y < nums[x].length; y++){
 				if(toReturn < nums[x][y]){
@@ -27,7 +27,14 @@ public class Runner {
 		
 	}
 	public static int columnSum(int[][] nums, int x){
-		return x;
+		int colSum = 0;
+		
+		for(int i =0; i < nums.length; i++){
+			if(nums[i].length - 1 >= x){
+				colSum += nums[i][x];
+			}
+		}
+		return colSum;
 		
 	}
 	public static int[] allRowSums(int[][] nums){
@@ -35,7 +42,24 @@ public class Runner {
 		
 	}
 	public static boolean isRowMagic(int[][] nums){
-		return false;
+		int firstTotal = 0;
+		int compareTotal = 0;
+		boolean firstTime = true;
+		for(int x =0; x < nums.length; x++){
+			for(int y =0; y < nums[x].length; y++){
+				if(firstTime){
+					firstTotal += nums[x][y];
+				}else{
+					compareTotal += nums[x][y];
+				}
+			}
+			if(firstTotal != compareTotal){
+				return false;
+			}
+			compareTotal = 0;
+			firstTime = false;
+		}
+		return true;
 		
 	}
 	public static boolean isColumnMagic(int[][] nums){
