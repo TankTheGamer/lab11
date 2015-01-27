@@ -1,8 +1,7 @@
 
 public class Runner {
 	public static void main(String[] args) {
-		int[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] wtfisthis
-		= new int[1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1][1];
+
 	}	
 	
 	public static int max(int[][] nums){
@@ -20,7 +19,11 @@ public class Runner {
 	}
 	
 	public static int rowSum(int[][] nums, int x){
-		return x;
+		int rowSum = 0;
+		for(int i = 0; i < nums[x].length; i++){
+			rowSum += nums[x][i];
+		}
+		return rowSum;
 		
 	}
 	public static int columnSum(int[][] nums, int x){
